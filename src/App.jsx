@@ -2,7 +2,6 @@ import './App.css'
 import DashboardLayout from './components/layout/DashboardLayout'
 import Navbar from './components/layout/Navbar'
 import SearchBar from './components/layout/SearchBar'
-// import MainLayout from './components/layout/MainLayout'
 
 export default function App() {
 

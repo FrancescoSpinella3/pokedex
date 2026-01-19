@@ -5,7 +5,7 @@ export default function Navbar() {
                 <div className="flex justify-between items-center h-18">
                     <a href='/'>
                         <img 
-                            src="/public/logo-pokemon.png" 
+                            src="/logo-pokemon.png" 
                             alt="Logo" 
                             className="h-12 w-auto hover:h-13 duration-300 ease-out"
                         />
