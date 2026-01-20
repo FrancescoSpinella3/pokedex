@@ -8,7 +8,7 @@ export default function PokemonFetch() {
     const [error, setError] = useState('')
 
     useEffect(() => {
-        setTimeout(() => fetchPokemon(), 1000)
+        fetchPokemon()
     }, [])
 
     const fetchPokemon = async (offset = 0) => {

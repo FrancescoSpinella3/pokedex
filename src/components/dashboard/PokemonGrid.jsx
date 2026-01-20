@@ -1,7 +1,7 @@
 export default function PokemonGrid({ pokemonList = [] }) {
     return (
         <div className="flex items-center justify-center">
-            <div className="grid grid-cols-3 cursor-pointer w-3xl gap-10">
+            <div className="grid grid-cols-4 cursor-pointer w-5xl gap-10">
                 {pokemonList.map(pokemon => (
                     <div 
                         key={pokemon.id}
