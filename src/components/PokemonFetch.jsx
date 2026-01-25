@@ -1,8 +1,7 @@
-import { Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import PokemonGrid from "./dashboard/PokemonGrid";
 
-export default function PokemonFetch() {
+export default function PokemonFetch({ searchQuery = '' }) {
     const [pokemonList, setPokemon] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('')
@@ -15,7 +14,7 @@ export default function PokemonFetch() {
         try {
             setLoading(true)
             // Fetching data
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/`);
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=251&offset=${offset}`);
             if (!response.ok) {
                 throw new Error("Errore durante il caricamento");
             }
@@ -62,7 +61,25 @@ export default function PokemonFetch() {
         );
     }
 
+    const q = (searchQuery || '').toString().trim().toLowerCase();
+    const filteredList = q
+        ? pokemonList.filter(pokemon => {
+            const nameMatch = (pokemon.name || '').toLowerCase().startsWith(q);
+            const idMatch = pokemon.id.toString().startsWith(q);
+            
+            return nameMatch || idMatch;
+        })
+        : pokemonList;
+
+    if (q && filteredList.length === 0) {
+        return (
+            <div className="text-gray-500 text-xl flex justify-center">
+                Nessun risultato
+            </div>
+        );
+    }
+
     return (
-        <PokemonGrid pokemonList={pokemonList} />
+        <PokemonGrid pokemonList={filteredList} />
     );
 }

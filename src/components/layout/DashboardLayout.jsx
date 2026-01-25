@@ -1,12 +1,12 @@
 import PokemonFetch from "../PokemonFetch";
-import FilterButton from "../ui/FilterButton";
+import CategoryBar from "./CategoryBar";
 
-export default function DashboardLayout() {
+export default function DashboardLayout({ searchQuery = '' }) {
     return (
-        <div className="min-h-screen bg-gray-50 mx-auto max-w-7xl px-5 py-7">
-            <FilterButton />
+        <div className="min-h-screen bg-gray-50 mx-auto max-w-7xl">
+            <CategoryBar />
  
-            <PokemonFetch />
+            <PokemonFetch searchQuery={searchQuery} />
         </div>
     );
 }

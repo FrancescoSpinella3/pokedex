@@ -1,6 +1,6 @@
 export default function Navbar() {
     return (
-        <nav className="bg-gray-800 shadow-lg">
+        <nav className="bg-sky-950 shadow-lg">
             <div className="mx-auto px-10 py-2">
                 <div className="flex justify-between items-center h-18">
                     <a href='/'>

@@ -1,4 +1,15 @@
-export default function SearchBar() {
+import { useState } from "react";
+
+export default function SearchBar({ onSearch = () => {} }) {
+    const [input, setInput] = useState('');
+    
+    const submit = () => onSearch(input.trim());
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') submit();
+    }
+
+
     return (
         <div className="bg-gray-100">
             <div className="bg-gray-100 border-b border-gray-300 flex items-center justify-between py-5 gap-28 max-w-7xl mx-auto">
@@ -20,12 +31,16 @@ export default function SearchBar() {
                     {/* Input text */}
                     <input 
                         type="text"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={handleKeyDown}
                         placeholder="Cerca un pokémon per nome o numero"
                         className="border border-gray-400 p-2 pl-9 rounded-md w-sm focus:outline-gray-600 mr-5"
                     />
 
                     {/* Search button */}
                     <button
+                        onClick={submit}
                         className="bg-sky-500 px-5 py-2.5 rounded-md text-white font-medium cursor-pointer hover:bg-sky-600 duration-200 ease-out"
                     >
                         Cerca

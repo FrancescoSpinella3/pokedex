@@ -8,29 +8,52 @@ export default function PokemonType({
     const name = type || (typeof children === "string" ? children : '');
 
     const typeColors = {
-        normal: 'bg-gray-200 text-gray-800',
-        grass: 'bg-green-200 text-green-800',
-        fire: 'bg-red-200 text-red-800',
-        water: 'bg-blue-200 text-blue-800',
-        electric: 'bg-yellow-200 text-yellow-800',
-        ice: 'bg-cyan-100 text-cyan-800',
-        fighting: 'bg-amber-200 text-amber-800',
-        poison: 'bg-violet-200 text-violet-800',
-        ground: 'bg-amber-100 text-amber-800',
-        flying: 'bg-sky-100 text-sky-800',
-        psychic: 'bg-pink-200 text-pink-800',
-        bug: 'bg-lime-200 text-lime-800',
-        rock: 'bg-stone-200 text-stone-800',
-        ghost: 'bg-indigo-200 text-indigo-800',
+        normal: 'bg-gray-400 text-zinc-900',
+        grass: 'bg-green-400 text-zinc-900',
+        fire: 'bg-orange-500 text-white',
+        water: 'bg-blue-500 text-white',
+        electric: 'bg-yellow-300 text-zinc-900',
+        ice: 'bg-cyan-200 text-zinc-900',
+        fighting: 'bg-orange-400 text-white',
+        poison: 'bg-violet-500 text-white',
+        ground: 'bg-amber-800 text-white',
+        flying: 'bg-sky-300 text-zinc-900',
+        psychic: 'bg-pink-500 text-white',
+        bug: 'bg-lime-300 text-zinc-900',
+        rock: 'bg-stone-500 text-white',
+        ghost: 'bg-indigo-500 text-white',
         dark: 'bg-stone-800 text-white',
-        dragon: 'bg-indigo-100 text-indigo-800',
-        steel: 'bg-slate-200 text-slate-800',
-        fairy: 'bg-pink-100 text-pink-800',
+        dragon: 'bg-indigo-300 text-zinc-900',
+        steel: 'bg-slate-300 text-zinc-900',
+        fairy: 'bg-pink-300 text-zinc-900',
+    };
+
+    // Transalation to italian
+    const translations = {
+        normal: 'Normale',
+        grass: 'Erba',
+        fire: 'Fuoco',
+        water: 'Acqua',
+        electric: 'Elettro',
+        ice: 'Ghiaccio',
+        fighting: 'Lotta',
+        poison: 'Veleno',
+        ground: 'Terra',
+        flying: 'Volante',
+        psychic: 'Psico',
+        bug: 'Coleottero',
+        rock: 'Roccia',
+        ghost: 'Spettro',
+        dark: 'Buio',
+        dragon: 'Drago',
+        steel: 'Acciaio',
+        fairy: 'Folletto',
     };
 
     const key = (name || '').toLowerCase();
     const colorClass = typeColors[key] ||" bg-gray-100 text-gray-800";
-    const label = name ? name.charAt(0).toUpperCase() + name.slice(1) : ''
+    const defaultLable = name ? name.charAt(0).toUpperCase() + name.slice(1) : '';
+    const label = translations[key] || defaultLable;
 
 
     return (
