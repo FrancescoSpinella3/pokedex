@@ -74,7 +74,7 @@ export default function PokemonFetch({ searchQuery = '' }) {
     if (q && filteredList.length === 0) {
         return (
             <div className="text-gray-500 text-xl flex justify-center">
-                Nessun risultato
+                Nessun risultato. Puoi cercare i pokémon per nome o per numero
             </div>
         );
     }

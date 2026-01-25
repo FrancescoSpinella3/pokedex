@@ -9,6 +9,13 @@ export default function SearchBar({ onSearch = () => {} }) {
         if (e.key === 'Enter') submit();
     }
 
+    const reset = () => {
+        setInput('');
+        onSearch('');
+    }
+
+
+
 
     return (
         <div className="bg-gray-100">
@@ -41,9 +48,17 @@ export default function SearchBar({ onSearch = () => {} }) {
                     {/* Search button */}
                     <button
                         onClick={submit}
-                        className="bg-sky-500 px-5 py-2.5 rounded-md text-white font-medium cursor-pointer hover:bg-sky-600 duration-200 ease-out"
+                        className="bg-sky-500 px-5 py-2.5 rounded-md text-white font-medium cursor-pointer hover:bg-sky-600 duration-200 ease-out mr-2"
                     >
                         Cerca
+                    </button>
+
+                    {/* Reset button */}
+                    <button
+                        onClick={reset}
+                        className="bg-orange-400 px-5 py-2.5 rounded-md text-white font-medium cursor-pointer hover:bg-orange-500 duration-200 ease-out"
+                    >
+                        Ripristina
                     </button>
                 </div>
             </div>

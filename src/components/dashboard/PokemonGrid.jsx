@@ -7,7 +7,7 @@ export default function PokemonGrid({ pokemonList = [] }) {
                 {pokemonList.map(pokemon => (
                     <div 
                         key={pokemon.id}
-                        className="flex flex-col items-center border border-gray-300 rounded-md bg-gray-200 shadow-md hover:scale-110 duration-200 ease-out overflow-hidden"
+                        className="flex flex-col items-center border border-gray-300 rounded-md bg-gray-200 shadow-md hover:scale-110 hover:bg-gray-300 duration-200 ease-out overflow-hidden"
                     >   
                         <div className="p-4">
                             <img src={pokemon.image} 

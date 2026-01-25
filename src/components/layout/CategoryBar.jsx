@@ -4,6 +4,7 @@ import FilterButton from "../ui/FilterButton";
 export default function CategoryBar() {
 
     const typeColors = [
+        {type: "Tutti", class: 'bg-white text-zinc-900'},
         {type: "normale", class: 'bg-gray-400 text-zinc-900'},
         {type: "erba", class: 'bg-green-400 text-zinc-900'},
         {type: "fuoco", class: 'bg-orange-500 text-white'},
